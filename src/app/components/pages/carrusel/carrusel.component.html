@@ -1,0 +1,10 @@
+<div class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+            <img src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000" class="img" alt="Gym Style">
+        </div>
+        <div class="carousel-item" *ngFor="let itemC of data" data-bs-interval="5000">
+            <img [src]="itemC.img" class="img" [alt]="itemC.title">
+        </div>
+    </div>
+</div>

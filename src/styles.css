@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.poly-trunc{
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+}
+
+.bg-middle{
+    background: rgba(0, 0, 0, 0.486) !important;
+    border-radius: 5px !important;
+}
+
+.dark-modal .modal-content {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+.dark-modal .close {
+color: white;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #dddddd;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff2f28;
+    border-radius: 5px;
+}

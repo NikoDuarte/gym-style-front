@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 align-self-center text-white" *ngFor="let itemA of dataAbout">
+            <h2>
+                <i class='{{itemA.icon}} bx-md'></i>
+                {{itemA.title}}
+            </h2>
+            <p>
+                {{itemA.descr}}
+            </p>
+        </div>
+    </div>
+</div>

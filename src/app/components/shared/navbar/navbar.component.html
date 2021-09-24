@@ -1,0 +1,19 @@
+<nav class="navbar navbar-white bg-define">
+    <div class="row justify-content-center w-100">
+        <div class="col-md-6 align-self-center">
+            <div class="container-fluid">
+                <button class="navbar-brand text-white btn btn-outline-link" routerLink="/gym-style">
+                    Gym Style
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 align-self-center text-end">
+            <button class="btn btn-outline-link text-white" *ngIf="type_menu == false" routerLink="/register">
+                ¿Sin cuenta? Crea tu cuenta ahora!!
+            </button>
+            <button class="btn btn-outline-link text-white" *ngIf="type_menu == true" routerLink="/sign-in">
+                ¿Ya tienes cuenta? Inicia sesion ahora!!
+            </button>
+        </div>
+    </div>
+</nav>

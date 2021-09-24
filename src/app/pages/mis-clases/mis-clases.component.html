@@ -1,0 +1,82 @@
+<div class="container text-white mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-12 aling-self-end">
+            <button class="btn btn-warning" (click)="open()" *ngIf="user.role === 'ENTRE-ROLE'">
+                Agregar clase
+            </button>
+        </div>
+        <div class="col-md-auto align-self-center text-center mt-4" *ngIf="class_data.length === 0">
+            <img src="./assets/img/no_class.svg" alt="gym style no clases" class="img-fluid w-50">
+            <h2 class="mt-4 text-white">
+                {{msg}}
+            </h2>
+        </div>
+        <div class="col-md-12 align-self-center mt-5" *ngIf="class_data.length > 0">
+            <h2 class="text-center">
+                {{title}}
+            </h2>
+            <div class="table-responsive-sm table-responsive-md w-100">
+                <table mat-table [dataSource]="dataSource" matSort class="w-100 text-center">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="title">
+                        <th mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> 
+                            Clase
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell class="text-center" *matHeaderCellDef> 
+                            Descripcion
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="cupos">
+                        <th mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> 
+                            Cupos
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cupos}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="opt">
+                        <th mat-header-cell class="text-center" *matHeaderCellDef> - </th>
+                        <td mat-cell *matCellDef="let element; let i = index">
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index;">
+                        <td mat-cell *matCellDef="let element; let i = index">
+                            <div class="btn-group w-75">
+                                <button type="button" class="btn btn-outline-link dropdown-icon btn-block" data-toggle="dropdown" aria-expanded="false">
+                                    <i class='bx bx-list-ul'></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button class="btn btn-outline-link dropdown-item" [routerLink]="['/dashboard/billing/bill',element._id]">
+                                            Ver
+                                        </button>
+                                    </li>
+                                    <li *ngIf="element.tipo === 'factura'">
+                                        <a class="btn btn-outline-link dropdown-item" [routerLink]="['/dashboard/billing/update-bill', element._id]">
+                                            Editar
+                                        </a>
+                                    </li>
+                                    <!--<li>
+                                        <button class="btn btn-outline-link text-danger dropdown-item" (click)="eliminarFactura(element, i)">
+                                            Eliminar
+                                        </button>
+                                    </li>-->
+                                </ul>
+                            </div> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

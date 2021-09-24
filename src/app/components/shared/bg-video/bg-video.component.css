@@ -1,0 +1,12 @@
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.849);
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow: hidden;
+    z-index: -999;
+}

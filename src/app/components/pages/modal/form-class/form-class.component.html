@@ -1,0 +1,32 @@
+<form [formGroup]="FormClass" autocomplete="off" (ngSubmit)="send_class()">
+    <div class="mb-3">
+        <!--Configuracion del input-->
+        <mat-form-field class="w-100">
+            <!--titulo del input-->
+            <mat-label>Nombre de la clase</mat-label>
+            <!--Input-->
+            <input matInput placeholder="Escribe el nombre de tu clase..." required formControlName="title">
+        </mat-form-field>
+    </div>
+    <div class="mb-3">
+        <mat-form-field class="w-100">
+            <mat-label>Describe tu clase</mat-label>
+            <textarea matInput placeholder="Ingresa una descripcion breve de tu clase..." formControlName="descr"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="mb-3">
+        <!--Configuracion del input-->
+        <mat-form-field class="w-100">
+            <!--titulo del input-->
+            <mat-label>Numero de cupos</mat-label>
+            <!--Input-->
+            <input matInput placeholder="Escribe el numero de cupos de tu clase..." required
+                type="number" formControlName="cupos">
+        </mat-form-field>
+    </div>
+    <div class="mb-3 text-center">
+        <button class="btn btn-success w-50" type="submit" [disabled]="FormClass.invalid">
+            Crear clase
+        </button>
+    </div>
+</form>

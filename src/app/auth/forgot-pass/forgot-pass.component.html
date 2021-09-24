@@ -1,0 +1,29 @@
+<!--Componente del navbar-->
+<app-navbar [type_menu]="false" class="fixed-top"></app-navbar>
+<!--Componente de video de fondo-->
+<app-bg-video [src_video]="bg_video"></app-bg-video>
+<!--Contenedor principal-->
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-auto align-self-center w-50">
+            <div class="bg-middle text-center">
+                <div class="py-4">
+                    <div class="mb-3">
+                        <!--Configuracion del input-->
+                        <mat-form-field class="w-50">
+                            <!--titulo del input-->
+                            <mat-label>Correo electronico</mat-label>
+                            <!--Input-->
+                            <input matInput placeholder="Escribe tu correo electronico..." class="text-white" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-success w-50" type="submit">
+                            Restaurar contraseña
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

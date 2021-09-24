@@ -1,0 +1,51 @@
+<!--Componente del navbar-->
+<app-navbar [type_menu]="false" class="fixed-top"></app-navbar>
+<!--Componente de video de fondo-->
+<app-bg-video [src_video]="bg_video"></app-bg-video>
+<!--Contenedor principal-->
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-auto align-self-center w-50">
+            <div class="bg-middle text-center">
+                <div class="py-4">
+                    <form [formGroup]="FormLog" autocomplete="off" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <!--Configuracion del input-->
+                            <mat-form-field class="w-50">
+                                <!--titulo del input-->
+                                <mat-label>Correo electronico</mat-label>
+                                <!--Input-->
+                                <input matInput placeholder="Escribe tu correo electronico..." class="text-white" required formControlName="email">
+                            </mat-form-field>
+                        </div>
+                        <div class="mb-3">
+                            <!--Configuracion del input-->
+                            <mat-form-field class="w-50">
+                                <!--titulo del input-->
+                                <mat-label>Contraseña</mat-label>
+                                <!--Input-->
+                                <input matInput [type]="hide ? 'password' : 'text'" class="text-white" formControlName="password" required>
+                                <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="btn btn-outline-link">
+                                  <mat-icon class="text-white">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </div>
+                        <div class="mb-3">
+                            <mat-checkbox color="warn" class="text-white" formControlName="me">
+                                Recuerdame!
+                            </mat-checkbox>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-outline-link text-white" routerLink="/forgot-password">
+                                ¿Olvidaste tu contraseña?
+                            </button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-success w-50" type="submit" [disabled]="FormLog.invalid">Iniciar sesion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
