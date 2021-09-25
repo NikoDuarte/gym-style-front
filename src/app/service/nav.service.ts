@@ -6,7 +6,7 @@ import { _data_about, _menu } from '../interface/interface';
 })
 export class NavService {
   
-  //* |-> Menu navbar homrPages
+  //* |-> Menu navbar homePages
   public menu: _menu[] = [
     {
       title: 'Inicio',

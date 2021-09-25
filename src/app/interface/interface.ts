@@ -17,6 +17,14 @@ interface _data_about {
     icon: string,
     descr: string
 }
+
+//* |-> Clases data
+interface _data_clases {
+    title: string,
+    img: any,
+    descripcion: string
+}
+
 //* |-> Crear usuario
 interface _user {
     name: string,
@@ -53,6 +61,7 @@ export {
     _menu,
     _carrusel,
     _data_about,
+    _data_clases,
     _user,
     _update_user,
     _login,

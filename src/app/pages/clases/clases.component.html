@@ -1,21 +1,31 @@
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-auto align-self-center text-center" *ngIf="class_data.length === 0">
-            <img src="./assets/img/no_class.svg" alt="gym style no clases" class="img-fluid w-50">
-            <h2 class="mt-4 text-white">Parece que en este momento no hay ninguna clase disponible</h2>
-        </div>
-        <div class="col-md-4" *ngIf="class_data.length > 0">
-            <div class="card text-center">
-                <div class="card-header">
-                    hola
+<div class="container mt-4" *ngFor="let itemA of dataClases">
+    <div class="col-md-12 mb-5">
+        <div class="card flip-card" >
+            <div class="flip-card-inner">
+                <!-- frente de la tarjeta -->
+                <div class="flip-card-front">
+                    <div class="mask">
+                        <div class="align-end">
+                            {{itemA.title}}
+                        </div>
+                    </div>
+                    <!-- Imagen frontal -->
+                    <img src="{{itemA.img}}" alt="{{itemA.title}}">
                 </div>
-                <div class="card-body">
-                    holq
-                </div>
-                <div class="card-footer">
-                    hole
+                <!-- reverso de la tarjeta -->
+                <div class="flip-card-back">
+                    <div class="row no-gutters">
+                        <div>
+                            <h5 class="card-title">{{itemA.title}}</h5>
+                            
+                            <p class="card-text pl-2 mt-4">{{itemA.descripcion}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br><br>
+
+
