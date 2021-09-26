@@ -46,7 +46,7 @@ export class DataService {
     }
   ]
 
-  //* |-> Informacion de nosotros sentralizada
+  //* |-> Informacion de los servicios que se brindan.
   public clasesData: _data_clases[] = [
     {
       title: 'YOGA',
