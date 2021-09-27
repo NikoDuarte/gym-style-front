@@ -14,7 +14,7 @@ export class DataService {
     },
     {
       title: 'GymStyle',
-      img: 'https://images.pexels.com/photos/703016/photo-703016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000'
+      img: 'https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
     },
     {
       title: 'GymStyle',

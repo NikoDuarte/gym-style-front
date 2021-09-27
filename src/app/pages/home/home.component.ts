@@ -4,11 +4,11 @@ import { Users } from 'src/app/models/usuarios.models';
 import { DataService } from '../../service/data.service';
 import { AuthService } from '../../api/auth.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: [
-  ]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 

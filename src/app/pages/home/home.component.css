@@ -1,0 +1,107 @@
+/*----  Main Style  ----*/
+
+/*Margen superior he inferior del contenedor*/
+#cards_landscape_wrap-2 .container{
+  padding-top: 50px; 
+  padding-bottom: 100px;
+}
+
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+
+/*Borde redondeado de las cards*/
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+
+/*parametros que permiten que la animacion cuando se colca el cursor sobre la imagen no se salga de la card*/
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+
+/*Se define el tamaño de las cards y define los tiempos de la animacion*/
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+  width: 100%;
+  height: 200px;
+}
+
+/*Animacion de acercar la imagen*/
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+
+/*Alineacion del texto*/
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+
+/*Separacion entre la imagen y el texto */
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+
+/*Permite que la animacion no se mueva de la card y se agregan  */
+#cards_landscape_wrap-2 .card-flyer{
+  background: rgba(62, 69, 81, 0.5);
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+/*Animacion de la card*/
+#cards_landscape_wrap-2 .card-flyer:hover{
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+
+/*Modificaciones en el latra de la card*/
+
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/*Modificaciones en la letra el titulo de la card*/
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: #c11d00;
+}
+
+/*Maps*/
+#maps{
+  margin-bottom: 50px;
+  width: 100%;
+  height: 350px;
+}
