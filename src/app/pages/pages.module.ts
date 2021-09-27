@@ -15,6 +15,7 @@
   import { MaterialModule } from '../material/material.module';
 import { MisClasesComponent } from './mis-clases/mis-clases.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ClaseComponent } from './clase/clase.component';
 
 /***********/
 @NgModule({
@@ -28,6 +29,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     AboutComponent,
     MisClasesComponent,
     UsuariosComponent,
+    ClaseComponent,
   ],
   //* |-> Importaciones del modulo
   imports: [

@@ -66,8 +66,9 @@ export class SignInComponent implements OnInit {
     //* |-> Desestructuramos los datos
     const {email, password, me} = this.FormLog.value
     this.authService.login({email: email, password: password}).subscribe(
-      async({data:{token}, msg}: any) => {
+      async({data:{token, menu}, msg}: any) => {
         if(me === true) localStorage.setItem('email', email)
+        localStorage.setItem('menu', JSON.stringify(menu))
         await localStorage.setItem('token', token)
         let timerInterval: any
         Swal.fire({

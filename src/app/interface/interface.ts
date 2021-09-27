@@ -17,14 +17,12 @@ interface _data_about {
     icon: string,
     descr: string
 }
-
 //* |-> Clases data
 interface _data_clases {
     title: string,
-    img: any,
+    cupos: number,
     descripcion: string
 }
-
 //* |-> Crear usuario
 interface _user {
     name: string,
@@ -55,6 +53,14 @@ interface _create_course{
     descr: string,
     cupos: number
 }
+//* |-> Info de todos los usuarios (servicio api)
+interface _users {
+    _id: number,
+    name: string,
+    email: string,
+    phone: string,
+    role: string
+}
 /*********/
 // TODO: Exportacion del modulo
 export {
@@ -65,5 +71,6 @@ export {
     _user,
     _update_user,
     _login,
-    _create_course
+    _create_course,
+    _users
 }

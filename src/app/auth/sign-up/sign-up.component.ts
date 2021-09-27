@@ -67,7 +67,7 @@ export class SignUpComponent implements OnInit {
       //* |-> Resultados del formulario de usuario
       ...this.FormUser.value,
       //* |-> Definicion del role
-      role: 'ENTRE-ROLE',
+      role: 'DEFAULT-ROLE',
       //* |-> Resultados del formulario de medico
       ...this.FormMedico.value
     }

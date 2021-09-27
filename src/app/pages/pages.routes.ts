@@ -12,6 +12,7 @@ import { MisClasesComponent } from './mis-clases/mis-clases.component';
 import { ValidAuthGuard } from '../guards/valid-auth.guard';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ValidAdminGuard } from '../guards/valid-admin.guard';
+import { ClaseComponent } from './clase/clase.component';
 
 const pages_routes: Routes = [
     {
@@ -35,6 +36,10 @@ const pages_routes: Routes = [
         path: 'usuarios',
         component: UsuariosComponent,
         canActivate: [ValidAdminGuard]
+    },
+    {
+        path: 'clase/:id',
+        component: ClaseComponent
     },
     {
         path: '',

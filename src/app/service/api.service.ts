@@ -19,7 +19,9 @@ export class ApiService {
     get header() {
       return {
         headers: {
-          'auth-gym': this.token
+          'auth-gym': this.token,
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         }
       }
     }

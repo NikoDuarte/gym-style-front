@@ -121,6 +121,7 @@ export class AuthService {
   //? -_ Metodo que eliminara el token y cerrara sesion
   logout(){
     localStorage.removeItem('token')
+    localStorage.removeItem('menu')
     this.ApiService.$Emmiter.emit(false)
     this.ngZone.run(() => this.router.navigateByUrl('/sign-in'))
   }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { _data_about, _menu } from '../interface/interface';
 
@@ -25,21 +26,14 @@ export class NavService {
     }
   ]
 
-  //* |-> Menu de opciones del usuario
-  public menu_option: _menu[] = [
-    {
-      title: 'Mis clases',
-      path: '/gym-style/mis-clases'
-    },
-    {
-      title: 'Usuarios',
-      path: '/gym-style/usuarios'
-    },
-    {
-      title: 'Configuraciones',
-      path: '/gym-style/mis-clases'
-    }
-  ]
+  public menu_user: _menu[] = []
 
-  constructor() { }
+  constructor(
+  ) {    
+  }
+
+  loadMenu(){
+    return this.menu_user = JSON.parse(localStorage.getItem('menu')!)
+  }
+
 }

@@ -35,13 +35,15 @@ export class ClaseInsService {
   }
 
   //? -_ Metodo que inscribe un usuario a una clase
-  inscriptionClassUser(id: string){
+  inscriptionClassUser(id: number){
+    console.log(this.headers);
+    
     const api: string = `${base_api}/class/inscription-class/${id}`
       return this.http.post(api, '', this.headers)
   }
 
   //? -_ Metodo que desinscribe a un usuario de una clase
-  desinscriptionClassUser(id: string){
+  desinscriptionClassUser(id: number){
     const api: string = `${base_api}/class/delete-ins/${id}`
       return this.http.delete(api, this.headers)
   }

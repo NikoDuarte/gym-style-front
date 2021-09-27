@@ -40,7 +40,7 @@ export class ClasesService {
   }
 
   //? -_ Metodo que traera la informacion de una clase en especifico
-  viewUniqueClass(id: string){
+  viewUniqueClass(id: number){
     const api: string = `${base_api}/class/${id}`
       return this.http.get(api)
   }
@@ -52,13 +52,13 @@ export class ClasesService {
   }
 
   //? -_ Metodo que actualizara la clase
-  updateClass(body: _create_course, id: string){
+  updateClass(body: _create_course, id: number){
     const api: string = `${base_api}/class/update-class/${id}`
       return this.http.put(api, body, this.headers)
   }
 
   //? -_ Metodo para eliminar las clases inscritas
-  deleteClass(id: string) {
+  deleteClass(id: number) {
     const api: string = `${base_api}/class/delete-class/${id}`
       return this.http.delete(api, this.headers)
   }

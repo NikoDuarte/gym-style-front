@@ -1,13 +1,9 @@
-.container{
-    font-family: Roboto;
-  }
-
 /* card flip animation */
 .flip-card {
     background-color: transparent;
     perspective: 3000px;
     /* Genera un efecto 3D */
-    height: 500px;
+    height: 250px;
     /* Es necesario una altura para que aparezca en la página */
     border: 0px;
     /*Elimina el borde predeterminado que tienen las tajetas en Bootstrap */
@@ -68,7 +64,7 @@
   
   .flip-card-front .mask .align-end {
     position: absolute;
-    top: 85%;
+    top: 50%;
     left: 20px;
     color: #fafafa;
     font-size: 1.5em;
@@ -88,7 +84,7 @@
 
   /*Ajusta la el tamaño y grosor del titulo posterior*/
   .card-title{
-      font-size: 50px;
+      font-size: 20px;
       font-weight: 500;
   }
 

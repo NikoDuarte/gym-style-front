@@ -19,6 +19,14 @@
                 <table mat-table [dataSource]="dataSource" matSort class="w-100 text-center">
 
                     <!-- Position Column -->
+                    <ng-container matColumnDef="name_entre" *ngIf="user.role != 'ENTRE-ROLE'">
+                        <th mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> 
+                            Nombre del entrenador
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name_entre}} </td>
+                    </ng-container>
+
+                    <!-- Position Column -->
                     <ng-container matColumnDef="title">
                         <th mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> 
                             Clase
@@ -45,34 +53,51 @@
                     <ng-container matColumnDef="opt">
                         <th mat-header-cell class="text-center" *matHeaderCellDef> - </th>
                         <td mat-cell *matCellDef="let element; let i = index">
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Opciones" class="btn btn-outline-link text-white">
+                                <i class='bx bx-dots-vertical bx-sm'></i>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                                <div *ngIf="user.role !== 'DEFAULT-ROLE'" class="text-white">
+                                    <button mat-menu-item [routerLink]="['/gym-style/clase', element._id]">
+                                        <span>
+                                            <i class='bx bx-info-square bx-sm'></i> 
+                                            Ver 
+                                        </span>
+                                    </button>
+                                    <button mat-menu-item (click)="editModal(element._id)">
+                                        <span>
+                                            <i class='bx bxs-message-alt-edit bx-sm'></i> 
+                                            Editar 
+                                        </span>
+                                    </button>
+                                    <button mat-menu-item (click)="deleteClass(element._id, i)">
+                                        <span>
+                                            <i class='bx bx-trash-alt bx-sm'></i> 
+                                            Eliminar 
+                                        </span>
+                                    </button>
+                                </div>
+                                <div *ngIf="user.role === 'DEFAULT-ROLE'" class="text-white">
+                                    <button mat-menu-item [routerLink]="['/gym-style/clase', element.id_class]">
+                                        <span>
+                                            <i class='bx bx-info-square bx-sm'></i> 
+                                            Ver 
+                                        </span>
+                                    </button>
+                                    <button mat-menu-item (click)="desuscribe(element.id_class, i)">
+                                        <span>
+                                            <i class='bx bx-user-minus bx-sm'></i> 
+                                            Desinscibirme
+                                        </span>
+                                    </button>
+                                </div>
+                            </mat-menu>
                         </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index;">
                         <td mat-cell *matCellDef="let element; let i = index">
-                            <div class="btn-group w-75">
-                                <button type="button" class="btn btn-outline-link dropdown-icon btn-block" data-toggle="dropdown" aria-expanded="false">
-                                    <i class='bx bx-list-ul'></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="btn btn-outline-link dropdown-item" [routerLink]="['/dashboard/billing/bill',element._id]">
-                                            Ver
-                                        </button>
-                                    </li>
-                                    <li *ngIf="element.tipo === 'factura'">
-                                        <a class="btn btn-outline-link dropdown-item" [routerLink]="['/dashboard/billing/update-bill', element._id]">
-                                            Editar
-                                        </a>
-                                    </li>
-                                    <!--<li>
-                                        <button class="btn btn-outline-link text-danger dropdown-item" (click)="eliminarFactura(element, i)">
-                                            Eliminar
-                                        </button>
-                                    </li>-->
-                                </ul>
-                            </div> 
                         </td>
                     </tr>
                 </table>

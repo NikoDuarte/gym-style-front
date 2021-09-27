@@ -1,0 +1,24 @@
+<div class="container vh-100 text-white">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-auto w-75 align-self-center">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>
+                        {{data?.title}}
+                    </h2>
+                    <p>
+                        {{data?.descripcion}}
+                    </p>
+                    <p>
+                        <span>{{insc}}</span>/<span class="text-success">{{data?.cupos}}</span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <button class="btn btn-danger" (click)="deleteClass()" *ngIf="user?.role === 'ENTRE-ROLE'">
+                        <i class='bx bx-trash-alt bx-sm'></i> 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

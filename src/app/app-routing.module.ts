@@ -13,7 +13,12 @@ const routes: Routes = [
       path: '',
       redirectTo: '/gym-style/home',
       pathMatch: 'full'
-    }
+  },
+  {
+    path: '**',
+    redirectTo: '/gym-style/home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

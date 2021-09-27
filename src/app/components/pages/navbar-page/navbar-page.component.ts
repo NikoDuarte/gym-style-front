@@ -20,7 +20,7 @@ export class NavbarPageComponent implements OnInit {
 
   //* |-> Informacion de los menu
   public menu: _menu[]
-  public menu_option : _menu[]
+  public menu_option : _menu[] | any
 
   //* |-> Ingresar la informacion del usuario
   public user !: Users
@@ -37,7 +37,7 @@ export class NavbarPageComponent implements OnInit {
   ) {
     //* |-> Configuracion y inicializacion de menus
     this.menu = menus.menu
-    this.menu_option = menus.menu_option
+    this.menu_option = menus.loadMenu()
     //* |-> Opcion user reactivo
   }
   
