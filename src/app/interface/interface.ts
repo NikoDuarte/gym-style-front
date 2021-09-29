@@ -55,7 +55,7 @@ interface _create_course{
 }
 //* |-> Info de todos los usuarios (servicio api)
 interface _users {
-    _id: number,
+    _id?: number,
     name: string,
     email: string,
     phone: string,

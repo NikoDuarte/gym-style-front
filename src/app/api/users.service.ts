@@ -6,7 +6,7 @@
   //* |-> Variables de ambiente
   import { environment } from 'src/environments/environment';
   //* |-> Interfaces
-  import { _update_user, _user } from '../interface/interface';
+  import { _update_user, _user, _users } from '../interface/interface';
   //* |-> Servicios
   import { ApiService } from '../service/api.service';
 
@@ -32,7 +32,7 @@ export class UsersService {
   }
 
   //? -_ Metodo que creara al usuario
-  create_user(body: _user){
+  create_user(body: _user | _users){
     //* |-> Creamos la variable que contendra el path del endpoint al cual queremos apuntar en la api
     const url_api: string = `${base_api}/user/`
       //* |-> Retornaremos un observable de la respuesta de la peticion que se envio
@@ -40,9 +40,9 @@ export class UsersService {
   }
 
   //? -_ Metodo que vera un usuario segun el id
-  view_unique_user(id: string){
+  view_unique_user(id: number){
     //* |-> Creamos la variable que contendra el path del endpoint al cual queremos apuntar en la api
-    const url_api: string = `${base_api}/view/${id}`
+    const url_api: string = `${base_api}/user/view/${id}`
       //* |-> Retornaremos un observable de la respuesta de la peticion que se envio
       return this.http.get(url_api, this.headers)
   }
@@ -60,7 +60,7 @@ export class UsersService {
     //* |-> Creamos la variable que contendra el path del endpoint al cual queremos apuntar en la api
     const url_api: string = `${base_api}/user/update/${body._id}`
       //* |-> Retornaremos un observable de la respuesta de la peticion que se envio
-      return this.http.put(url_api, this.headers) 
+      return this.http.put(url_api, body, this.headers) 
   }
 
   //? -_ Metodo que eliminara el usuario segun el id

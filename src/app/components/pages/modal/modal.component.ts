@@ -16,6 +16,8 @@ export class ModalComponent implements OnInit {
 
   @Input() public title!: string 
 
+  @Input() public title_button!: string 
+
   constructor(
     //* |-> Servicio para la utilidad del modal
     public activeModal: NgbActiveModal,

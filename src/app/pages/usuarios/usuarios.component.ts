@@ -4,6 +4,9 @@ import { UsersService } from '../../api/users.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../../components/pages/modal/modal.component';
+import { ApiService } from '../../service/api.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -25,12 +28,41 @@ export class UsuariosComponent implements OnInit {
 
   constructor(
     //* |-> Servicio api donde se encontraran las funcionalidades del usuario
-    private userService : UsersService
+    private userService : UsersService,
+    //* |-> Servicion para activar el modal
+    private modalService: NgbModal,
+    //* |-> Servicio que recibira la informacion emisora
+    private apiService : ApiService
   ) { }
 
   ngOnInit(): void {
     this.loadAllUser()
+    this.apiService.$EmmiterEntre.subscribe(
+      r => {
+        this.loadAllUser()
+      }, err => {
+        console.log(err);
+      }
+    )
   }
+
+  //? -_ Metodo que abrira el modal
+  open(){
+    const modalRef = this.modalService.open(ModalComponent, { size: 'md', centered: true, windowClass: 'dark-modal' })
+    modalRef.componentInstance.forms = false
+    modalRef.componentInstance.title = 'Crear un nuevo entrenador!'
+    modalRef.componentInstance.title_button = 'Crear usuario!'
+  }  
+
+  //? -_ Metodo que abrira el modal
+  openEditModal(id: number){
+    const modalRef = this.modalService.open(ModalComponent, { size: 'md', centered: true, windowClass: 'dark-modal' })
+    modalRef.componentInstance.forms = false
+    modalRef.componentInstance.id_act = id
+    modalRef.componentInstance.title = 'Editar un nuevo entrenador!'
+    modalRef.componentInstance.title_button = 'Editar usuario!'
+
+  } 
 
   //? -_ Metodo que cargara todos los usuarios registrados en el sistema
   loadAllUser(){

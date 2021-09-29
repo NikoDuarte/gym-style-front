@@ -7,6 +7,7 @@ export class ApiService {
 
   public $Emmiter : EventEmitter<boolean> = new EventEmitter()
   public $EmmiterClass : EventEmitter<boolean> = new EventEmitter()
+  public $EmmiterEntre : EventEmitter<boolean> = new EventEmitter()
 
   constructor() { }
   
