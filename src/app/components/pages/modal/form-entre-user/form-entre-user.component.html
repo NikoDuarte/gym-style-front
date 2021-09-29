@@ -1,1 +1,56 @@
-<p>form-entre-user works!</p>
+<form [formGroup]="FormUser" autocomplete="off">
+    <!--Titulo del stepper-->
+    <ng-template matStepLabel>Register</ng-template>
+    <div class="container-fluid m-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6 align-self-center text-center">
+                <div class="mb-3">
+                    <!--Configuracion del input-->
+                    <mat-form-field class="w-75">
+                        <!--titulo del input-->
+                        <mat-label>Nombre</mat-label>
+                        <!--Input-->
+                        <input matInput placeholder="Escribe tu nombre..." class="text-white" required formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="mb-3">
+                    <!--Configuracion del input-->
+                    <mat-form-field class="w-75">
+                        <!--titulo del input-->
+                        <mat-label>Correo electronico</mat-label>
+                        <!--Input-->
+                        <input matInput placeholder="Escribe tu correo..." required class="text-white" formControlName="email">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-6 align-self-center text-center">
+                <div class="mb-3">
+                    <!--Configuracion del input-->
+                    <mat-form-field class="w-75">
+                        <!--titulo del input-->
+                        <mat-label>Telefono</mat-label>
+                        <!--Input-->
+                        <input matInput placeholder="Escribe tu telefono..." required class="text-white" formControlName="phone">
+                    </mat-form-field>
+                </div>
+                <div class="mb-3">
+                    <!--Configuracion del input-->
+                    <mat-form-field class="w-75">
+                        <!--titulo del input-->
+                        <mat-label>Contraseña</mat-label>
+                        <!--Input-->
+                        <input matInput [type]="hide ? 'password' : 'text'" class="text-white" formControlName="password">
+                        <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="btn btn-outline-link">
+                          <mat-icon class="text-white">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>                                        </mat-form-field>
+                </div>
+            </div>
+            <!--Submit del formulario-->
+            <div class="col-md-12 mt-4 text-center">
+                <button matStepperNext class="btn btn-outline-link text-white float-right" [disabled]="FormUser.invalid">
+                    <i class='bx bxs-right-arrow-circle bx-md'></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
