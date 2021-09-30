@@ -1,4 +1,4 @@
-# Documentacion Gym Style 🧑🏻‍💻
+# Documentacion Gym Style FRONT 🧑🏻‍💻
 ## Descripcion 📃:
 _Integracion visual para el cliente en la actualizacion v2 de la aplicacion del gymStyle._
 
